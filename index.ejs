@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+</head>
+
+<body style="background-color:#f2f2f2; font-family:Arial;">
+
+<h2 style="color:blue;">Student Registration</h2>
+
+<form action="/submit" method="POST"
+onsubmit="return validateForm()">
+
+<label>Name</label><br>
+<input type="text" id="name" name="name"><br><br>
+
+<label>Email</label><br>
+<input type="email" id="email" name="email"><br><br>
+
+<label>Age</label><br>
+<input type="number" id="age" name="age"><br><br>
+
+<button type="submit">Submit</button>
+
+</form>
+
+<script>
+
+function validateForm(){
+
+let name=document.getElementById("name").value;
+let email=document.getElementById("email").value;
+let age=document.getElementById("age").value;
+
+if(name=="" || email=="" || age==""){
+alert("Please fill all fields");
+return false;
+}
+
+if(age<18){
+alert("Age should be at least 18");
+return false;
+}
+
+return true;
+
+}
+
+</script>
+
+</body>
+</html>
